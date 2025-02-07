@@ -123,9 +123,19 @@ button{
     width: 48px;
 }
 
-.hidden{
-    display: none;
+.replies-section {
+    display: none; /* Keep hidden by default */
+    padding: 10px;
+    transition: height 0.3s ease; /* Smooth transition */
+    max-height: 0; /* Initially set max-height to 0 */
+    overflow: hidden; /* Prevent content overflow */
 }
+
+.replies-section.show {
+    display: block; /* Show the replies when the class is added */
+    max-height: 500px; /* Set a maximum height for the replies */
+}
+
 
 .add-reply{
     display: flex;
@@ -166,3 +176,5 @@ button{
     font-weight: 600;
     cursor: pointer;
 }
+
+
