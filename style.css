@@ -33,6 +33,11 @@ i{
     color: limegreen;
 }
 
+.delete-tweeet:hover{
+    color: red;
+    transition: 0.5s;
+}
+
 main, header{
     width: 500px;
     margin: 0 auto;
@@ -89,7 +94,7 @@ button{
     display: flex;
     font-size: 15px;
     justify-content: space-between;
-    width: 200px;
+    width: 300px;
 }
 
 .tweet-detail{

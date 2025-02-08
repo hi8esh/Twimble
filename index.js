@@ -17,6 +17,9 @@ document.addEventListener('click', function (e) {
     else if (e.target.dataset.reply) {
         replyBtnClickHandler(e.target.dataset.reply);
     }
+    else if (e.target.dataset.delete) {
+        deleteTweetClickHandler(e.target.dataset.delete)
+    }
 });
 
 
@@ -108,6 +111,15 @@ function replyBtnClickHandler(tweetId) {
     }
 }
 
+function deleteTweetClickHandler(tweetId){
+    let tweetsData = getTweetsData()
+    tweetsData = tweetsData.filter(function(tweet){
+        return tweet.uuid !== tweetId
+    })
+    saveTweetsData(tweetsData)
+    render()
+}
+
 function render() {
     const feed = document.getElementById('feed');
     let feedData = '';
@@ -164,6 +176,9 @@ function render() {
                             <span class="tweet-detail">
                                 <i class="fa-solid fa-retweet ${retweetIconClass}" data-retweet="${tweet.uuid}"></i>
                                 ${tweet.retweets}
+                            </span>
+                            <span class="tweet-detail">
+                                <i class="fa-regular fa-trash-can delete-tweeet" data-delete="${tweet.uuid}"></i>
                             </span>
                         </div>
                     </div>
