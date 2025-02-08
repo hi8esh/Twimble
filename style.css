@@ -124,16 +124,16 @@ button{
 }
 
 .replies-section {
-    display: none; /* Keep hidden by default */
+    display: none;
     padding: 10px;
-    transition: height 0.3s ease; /* Smooth transition */
-    max-height: 0; /* Initially set max-height to 0 */
-    overflow: hidden; /* Prevent content overflow */
+    transition: height 0.3s ease;
+    max-height: 0;
+    overflow: hidden;
 }
 
 .replies-section.show {
-    display: block; /* Show the replies when the class is added */
-    max-height: 500px; /* Set a maximum height for the replies */
+    display: block;
+    max-height: 500px;
 }
 
 

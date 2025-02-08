@@ -178,5 +178,4 @@ function render() {
     feed.innerHTML = feedData;
 }
 
-// Initial call to render the feed when page loads
 render();
