@@ -97,7 +97,6 @@ Contributions are welcome to improve Twimble. If you'd like to contribute:
 
 ## License
 This project is open-source and available under the [MIT License on Open Source](https://opensource.org/licenses/MIT).
-<a href="https://twimble.netlify.app/" target="_blank">Twimble Demo</a>
 
 ## Acknowledgments
 Thanks to the open-source community for various JavaScript libraries and tools used in this project, including the `uuid` library for generating unique identifiers.
