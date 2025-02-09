@@ -112,12 +112,12 @@ function replyBtnClickHandler(tweetId) {
 }
 
 function deleteTweetClickHandler(tweetId){
-    let tweetsData = getTweetsData()
+    let tweetsData = getTweetsData();
     tweetsData = tweetsData.filter(function(tweet){
-        return tweet.uuid !== tweetId
+        return tweet.uuid !== tweetId;
     })
-    saveTweetsData(tweetsData)
-    render()
+    saveTweetsData(tweetsData);
+    render();
 }
 
 function render() {
