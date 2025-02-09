@@ -81,7 +81,7 @@ function tweetBtnClickHandler() {
             profilePic: `./images/shinchan1.jpg`,
             likes: 0,
             retweets: 0,
-            tweetText: tweetInput.value,
+            tweetText: sanitizeInput(tweetInput.value), // Sanitize tweet text input
             replies: [],
             isLiked: false,
             isRetweeted: false,
@@ -102,7 +102,7 @@ function replyBtnClickHandler(tweetId) {
         targetObj.replies.unshift({
             handle: `@Sinchan`,
             profilePic: `./images/shinchan1.jpg`,
-            tweetText: replyInput.value
+            tweetText: sanitizeInput(replyInput.value) // Sanitize reply text input
         });
         saveTweetsData(tweetsData);
         render();
@@ -118,6 +118,13 @@ function deleteTweetClickHandler(tweetId){
     })
     saveTweetsData(tweetsData);
     render();
+}
+
+// Function to sanitize input and prevent malicious JavaScript execution
+function sanitizeInput(input) {
+    const element = document.createElement('div');
+    element.textContent = input;  // Ensures any HTML or JavaScript is converted to plain text
+    return element.innerHTML;     // Returns the sanitized text
 }
 
 function render() {
